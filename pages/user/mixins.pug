@@ -1,0 +1,109 @@
+mixin formDom
+    .form-row
+        .col-sm-6.col-md-4
+            Input(
+                label="Họ tên"
+                :validator="$v.formData.fullName"
+                name="fullName"
+            )
+        .col-sm-6.col-md-4
+            Input(
+                label="Tên hiển thị"
+                :validator="$v.formData.displayName"
+                name="displayName"
+            )
+        .col-sm-6.col-md-4
+            Select(
+                :options="userGroups"
+                label="Nhóm người dùng"
+                v-model="$v.formData.userGroup"
+                :validator="$v.formData.userGroup"
+                name="userGroup"
+            )
+
+    .form-row
+        .col-sm-6.col-md-4
+            Input(
+                :validator="$v.formData.email"
+                name="email"
+                label="Email"
+            )
+
+        .col-sm-6.col-md-4(v-if="editPasswordOption")
+            .form__check-baseline
+                .form-check
+                    input.form-check-input(type="checkbox" v-model="showEditPassword")
+                    label.form-check-label Thay đổi mật khẩu
+
+    .form-row
+        .col-sm-6.col-md-4(v-if="showEditPassword")
+            Input(
+                type="password",
+                :validator="$v.formData.password"
+                name="password"
+                label="Mật khẩu"
+            )
+        .col-sm-6.col-md-4(v-if="showEditPassword")
+            Input(
+                type="password",
+                :validator="$v.formData.passwordConfirm"
+                name="passwordConfirm"
+                label="Lặp lại mật khẩu"
+            )
+    .row
+        .col-sm-8
+            .form-row
+                .col-sm-6
+                    Input(
+                        :validator="$v.formData.phoneNumber"
+                        name="phoneNumber"
+                        label="Số điện thoại"
+                    )
+                .col-sm-6
+                    Input(
+                        :validator="$v.formData.subPhoneNumber"
+                        name="subPhoneNumber"
+                        label="Số phụ"
+                    )
+            .form-row
+                .col
+                    .col
+                    Input(
+                        :validator="$v.formData.address"
+                        name="address"
+                        label="Địa chỉ"
+                    )
+
+            .form-row
+                .col-sm-6
+                    Input(
+                        :validator="$v.formData.idNumber"
+                        name="idNumber"
+                        label="Số CMND"
+                    )
+                .col-sm-6
+                    .form-group
+                        label Ngày cấp
+                        DatePicker(
+                            v-model="formData.idIssueDate"
+                            :format="dateFormat"
+                        )
+                        FormValidation(:validator="$v.formData.idIssueDate" name="idIssueDate")
+                .col-sm-6
+                    Input(
+                        :validator="$v.formData.idIssuePlace"
+                        name="idIssuePlace"
+                        label="Nơi cấp"
+                    )
+                .col-sm-6
+                    .form-group
+                        label Ngày sinh
+                        DatePicker(
+                            v-model="formData.dateOfBirth"
+                            :format="dateFormat"
+                        )
+                        FormValidation(:validator="$v.formData.dateOfBirth" name="dateOfBirth")
+        .col-sm-4
+            .avatar__selector
+                input.input__file(type="file" id="input__file"  @change="fileChange")
+                ImagePreviewComponent(v-if="image" :url="image" @onDelete="onImageDelete")

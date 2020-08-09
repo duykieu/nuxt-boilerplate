@@ -1,0 +1,19 @@
+.permissions__list {
+    margin-top: 2rem;
+
+    &-item {
+        margin-bottom: 2rem;
+        border-bottom: .1rem dashed $gray-400;
+        padding-bottom: 2rem;
+
+        h6 {
+            display: inline-block;
+            border-bottom: 1px solid $main-dark-color;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            margin-left: 1rem;
+        }
+    }
+}

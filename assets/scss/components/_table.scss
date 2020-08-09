@@ -1,0 +1,17 @@
+table {
+    font-size: 1.3rem;
+
+    &.padding {
+        th, td {
+            padding: 1.5rem 1rem;
+        }
+    }
+
+    th.commands {
+        & > div {
+            display: none;
+        }
+
+    }
+}
+

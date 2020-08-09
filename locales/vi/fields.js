@@ -1,0 +1,16 @@
+export default {
+    username: "Tên truy cập",
+    password: "Mật khẩu",
+    passwordConfirm: "Lặp lại mật khẩu",
+    name: "Tên",
+    code: "Mã",
+    email: "Email",
+    fullName: "Tên đầy đủ",
+    displayName: "Tên hiển thị",
+    phoneNumber: "Số điện thoại",
+    subPhoneNumber: "Số phụ",
+    dateOfBirth: "Ngày sinh",
+    idIssueDate: "Ngày cấp",
+    idIssuePlace: "Nơi cấp",
+    idNumber: "Số CMND/CCCD",
+};

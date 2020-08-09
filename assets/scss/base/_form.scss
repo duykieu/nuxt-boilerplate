@@ -1,0 +1,49 @@
+.form-group {
+    label {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.form__error {
+    font-size: 1.2rem;
+    color: $danger;
+}
+
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+}
+
+
+.ant-calendar-picker {
+    display: block;
+    width: 100%;
+}
+
+
+.form__check-baseline {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+
+    label {
+        margin-left: 1rem;
+    }
+}
+
+.v-select {
+    background: $white;
+}

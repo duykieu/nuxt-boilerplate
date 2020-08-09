@@ -1,0 +1,16 @@
+mixin permissionsList
+    .permissions__list
+        .permissions__list-item(v-for="(actions, screen) in allPermissions")
+            h6 {{ $t('acl.screen.' + screen) }}
+            .row
+                .col-6.col-sm-4.col-md-3.col-xl-2(v-for="action in actions")
+                    .form-check
+                        input.form-check-input(
+                            type="checkbox"
+                            :id="screen+action"
+                            v-model="formData.permissions"
+                            :value="screen+action"
+                        )
+                        label.form-check-label(
+                            :for="screen+action"
+                        ) {{ $t('acl.action.' + action) }}

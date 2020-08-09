@@ -1,0 +1,18 @@
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+
+    &-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+.no__padding {
+    padding: 0;
+
+    .card-body {
+        padding: 0;
+    }
+}
+
+
